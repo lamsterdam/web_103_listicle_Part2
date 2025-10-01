@@ -28,8 +28,8 @@ const renderPlants = async () => {
             const link = document.createElement('a')
             link.textContent = 'Read More >'
             link.setAttribute('role', 'button')
-            link.href = `/plants/${plant.id}`
-            // link.href = `/plants/${plant.slug}`
+            // link.href = `/plants/${plant.id}`
+            link.href = `/plants/${plant.slug}`
             bottomContainer.appendChild(link)
 
             card.appendChild(topContainer)
@@ -46,12 +46,12 @@ const renderPlants = async () => {
     }
 }
 
-renderPlants()
+// renderPlants()
 
-// const requestedUrl = window.location.href.split('/').pop()
-// if (requestedUrl) {
-//     window.location.href = '../404.html'
-// }
-// else {
-//     renderPlants()
-// }
+const requestedUrl = window.location.href.split('/').pop()
+if (requestedUrl) {
+    window.location.href = '../404.html'
+}
+else {
+    renderPlants()
+}

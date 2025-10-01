@@ -1,13 +1,13 @@
 const renderPlant = async () => {
-    const requestedID = parseInt(window.location.href.split('/').pop())
-    // const requestedSlug = window.location.pathname.split('/').pop()
+    // const requestedID = parseInt(window.location.href.split('/').pop())
+    const requestedSlug = window.location.pathname.split('/').pop()
     const response = await fetch('/plants')
     const data = await response.json()
 
     const plantContent = document.getElementById('plant-content')
     let plant
     if (data) {
-        plant = data.find(plant => plant.id === requestedID)
+        plant = data.find(plant => plant.slug === requestedSlug)
     }
 
     if (plant) {
